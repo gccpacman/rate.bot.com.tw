@@ -39,7 +39,7 @@ func (c *Crawler)GetDateRange(begin, end time.Time) []string {
 func (c *Crawler)GetOneDay(date time.Time) string {
 	dateStr := fmt.Sprintf("%04d%02d%02d", date.Year(), date.Month(), date.Day())
 	fmt.Printf("Getting %s...\n", dateStr)
-	url := "http://rate.bot.com.tw/Pages/UIP005/UIP00511.aspx?whom=GB0030001000&afterOrNot=0&curcd=TWD&date=" + dateStr
+	url := "http://rate.bot.com.tw/Pages/UIP005/UIP00511.aspx?lang=zh-TW&whom=GB0030001000&afterOrNot=0&curcd=TWD&date=" + dateStr
 	resp, err := http.DefaultClient.Get(url)
 	if err != nil {
 		log.Printf("get url has error, %s", err)
